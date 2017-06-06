@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{%block title%}Welcome |{% endblock %}
+
+
+ {% block jumbotron %}
+ 	<style>
+ 	.jumbotron {
+ 		background-color:rgba(161, 203, 234, 0.8);
+ 	}
+ 	.navbar-default {
+    background-color: rgba(34, 141, 224, 0.8);
+	}
+	.navbar-static-top {
+     margin-bottom: 0px;
+	}
+ 	</style>
+      <div class="jumbotron">
+	      <div class="row">
+	      	<div class="col-xs-8">
+		        <h1>Swachh Pledge</h1>
+		        <p>Prime Minister Shri Narendra Modi exhorted people to fulfill Mahatma Gandhi's vision of Clean India. The 'Swachh Bharat Abhiyan' is a massive mass movement that seeks to create a Clean India. Cleanliness was very close to Mahatma Gandhi's heart. A clean India is the best tribute we can pay to Bapu when we celebrate his 150th birth anniversary in 2019. Mahatma Gandhi devoted his life so that India attains 'Swarajya'. Now the time has come to devote ourselves towards 'Swachchhata' (cleanliness) of our motherland. </p>
+		          <a class="btn btn-lg btn-primary" href="https://swachhbharat.mygov.in/basic-page/take-pledge" role="button">Take a Pledge &raquo;</a>
+		        </p>
+		    </div>
+	     	<div class="col-xs-4"><span class="pull-right">
+	     	<iframe width="460px" height="315" src="https://www.youtube.com/embed/gzs2t6BCrU0" frameborder="0" allowfullscreen></iframe>
+	     	</span>
+	     	</div>
+	     </div>
+      </div>
+ {% endblock %}
+ 
+{% block content %}
+
+<div class="row">
+	<div class="col-md-3 pull-right">
+		<p class="lead">{{title}}</p>
+
+		<form method="POST" action="">{%csrf_token%}
+			{{form|crispy}}
+			<input type="submit" class="btn btn-primary" value="Sign Up">
+		</form>
+	</div>
+	<div class="col-md-3 pull-left">
+		<span class="fa-stack fa-2x">
+		  <i class="fa fa-square-o fa-stack-2x"></i>
+		  <i class="fa fa-github fa-stack-1x"></i>
+		</span>
+		<a href='https://github.com/mjayant/Code' style='color:black;'>Source Code</a>
+	</div>
+	<div class="col-md-3 pull-left" style='color:#2a6ba2;'>
+		<span class="fa-stack fa-2x">
+		  <i class="fa fa-square-o fa-stack-2x"></i>
+		  <i class="fa fa-linkedin fa-stack-1x"></i>
+		</span>
+		<a href='https://www.linkedin.com/in/jayant-mishra-477b3180/'>Follow Me</a>
+	</div>
+</div>
+
+
+{% endblock %}
+
